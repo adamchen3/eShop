@@ -26,6 +26,9 @@ public static class MauiProgram
         return MauiApp
             .CreateBuilder()
             .UseMauiApp<App>()
+            // https://learn.microsoft.com/en-us/previous-versions/xamarin/xamarin-forms/app-fundamentals/effects/
+            // https://learn.microsoft.com/en-us/dotnet/maui/migration/effects?view=net-maui-9.0#register-the-effect
+            // Xamrian.Form的东西，类似使用Handler实现自定义控件效果
             .ConfigureEffects(
                 effects =>
                 {
