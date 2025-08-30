@@ -42,9 +42,14 @@ public static class MauiProgram
                     fonts.AddFont("Montserrat-Bold.ttf", "Montserrat-Bold");
                     fonts.AddFont("Montserrat-Regular.ttf", "Montserrat-Regular");
                 })
+            // 各种方便移动端开发的跨平台API
+            // https://learn.microsoft.com/en-us/previous-versions/xamarin/essentials/?WT.mc_id=xamarin-blog-jamont
+            // https://devblogs.microsoft.com/dotnet/dotnet-maui-preview-14/
             .ConfigureEssentials(
                 essentials =>
                 {
+                    // AppAction在iOS的作用为，可以长按app的icon，可以在弹出的菜单中添加自定义选项。
+                    // 点击之后，就会调用OnAppAction注册的回调。
                     essentials
                         .AddAppAction(AppActions.ViewProfileAction)
                         .OnAppAction(App.HandleAppActions);
